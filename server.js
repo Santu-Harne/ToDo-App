@@ -7,7 +7,7 @@ const path = require('path')
 const { StatusCodes } = require('http-status-codes')
 
 // port
-const PORT = process.env.PORT || Number(7000)
+const PORT = process.env.PORT || 7000
 
 // reference
 const app = express()
@@ -39,7 +39,7 @@ app.all('*', (req, res) => {
 
 const start = async () => {
     app.listen(PORT, () => {
-        // console.log(`server is listening @ http://localhost:${PORT}`);
+        console.log(`server is listening @ http://localhost:${PORT}`);
     })
 }
 
