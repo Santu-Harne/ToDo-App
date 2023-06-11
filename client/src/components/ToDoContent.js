@@ -31,7 +31,7 @@ const ToDoContent = () => {
     const submitHandler = async (e) => {
         e.preventDefault()
         try {
-            await axios.post('http://localhost:7000/todo/addTask', todo)
+            await axios.post('/todo/addTask', todo)
                 .then(res => {
                     // console.log(res.data.data);
                     setTodo(initial)
@@ -45,7 +45,7 @@ const ToDoContent = () => {
     }
 
     const iniFetch = async () => {
-        await axios.get('http://localhost:7000/todo/getAll')
+        await axios.get('/todo/getAll')
             .then(res => {
                 // console.log(res.data.data);
                 setAllTasks(res.data.data)
@@ -53,7 +53,7 @@ const ToDoContent = () => {
     }
     const completeHandler = async (id, task) => {
         if (window.confirm('Have you completed the task..?')) {
-            await axios.patch(`http://localhost:7000/todo/completedTask/${id}`)
+            await axios.patch(`/todo/completedTask/${id}`)
                 .then(res => {
                     toast.success(res.data.msg)
                     // console.log(res.data.data);
@@ -62,7 +62,7 @@ const ToDoContent = () => {
     }
     const deleteHandler = async (id) => {
         if (window.confirm('Are your sure to delete..?')) {
-            await axios.delete(`http://localhost:7000/todo/deleteTask/${id}`)
+            await axios.delete(`/todo/deleteTask/${id}`)
                 .then(res => {
                     toast.success(res.data.msg)
                 }).catch(err => console.log(err.response.data.msg))
