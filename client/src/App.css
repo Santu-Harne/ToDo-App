@@ -1,0 +1,74 @@
+body {
+    background: linear-gradient(90deg, #525354 10%, #0b2835 70%);
+}
+.inp-group {
+    position: relative;
+    border: 2px solid rgb(58, 56, 56);
+    border-radius: 30px;
+    display: inline-block;
+    text-align: center;
+    background-color: rgb(59, 58, 58);
+}
+.clear-icon {
+    position: absolute;
+    right: 100px;
+    z-index: 5;
+    color: #fff;
+}
+.submit-button {
+    border: none;
+    font-weight: bold !important;
+    border-radius: 0 30px 30px 0;
+    padding: 8px;
+    background-color: rgb(197, 188, 176);
+}
+input[type="text"] {
+    background-color: rgb(59, 58, 58);
+    border: none;
+    border-radius: 30px 0 0 30px;
+    width: 400px;
+    caret-color: #fff;
+    color: #fff;
+    padding-inline-start: 15px;
+}
+input[type="text"]:focus-visible {
+    outline: none;
+}
+input[type="text"]::placeholder {
+    color: #9c9999;
+}
+.task-item {
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 5px 20px;
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 30px;
+    height: 100%;
+}
+.bi:not(.bi-x-lg) {
+    font-size: 25px;
+    margin-left: 20px;
+    text-decoration: none;
+    position: relative;
+}
+.completed-popup,
+.delete-popup {
+    display: none;
+    font-size: 15px;
+    padding: 5px;
+    background-color: rgb(41, 40, 40);
+    position: absolute;
+    top: -32px;
+    left: -30px;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    transition: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+.bi-check-circle-fill:hover .completed-popup,
+.bi-trash-fill:hover .delete-popup {
+    display: block;
+    transition: 2s;
+}
